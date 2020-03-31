@@ -18,11 +18,11 @@ RUN tar zxfv $mecab_filename && cd mecab-0.996 && \
 RUN tar zxfv $mecab_ipadic_filename && cd mecab-ipadic-2.7.0-20070801 && \
     ./configure --with-charset=utf8 && make && su -c "make install"
 
-RUN git clone https://github.com/ayumitamai97/cutup.git
+RUN git clone https://github.com/ayumitamai97/secret_dinner.git
 
-WORKDIR cutup/
+WORKDIR secret_dinner/
 
 RUN bundle
 
-ENTRYPOINT ["ruby", "cutup.rb"]
+ENTRYPOINT ["ruby", "secret_dinner.rb"]
 
